@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #37474f;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 900px;
+  background-color: #232931;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.left-info {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 25px;
+  background: url("/images/weather-bg.jpg") center/cover no-repeat;
+  position: relative;
+  min-height: 400px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.left-info:hover {
+  transform: scale(1.05);
+}
+
+.pic-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #5c6bc0 10%, #0d47a1 100%);
+  border-radius: 25px;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.today-info,
+.today-weather {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.today-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.today-info div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.today-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.today-weather .bx {
+  font-size: 4rem;
+}
+
+.weather-temp {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.right-info {
+  flex: 1 1 50%;
+  padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.day-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.day-info div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.day-info .title {
+  font-weight: 700;
+}
+
+.days-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 20px;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.days-list li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  width: 22%;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.days-list li .bx {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.days-list li .day-temp {
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.days-list li:hover {
+  background: #fff;
+  color: #222831;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.loc-button {
+  outline: none;
+  width: 100%;
+  border: none;
+  font-weight: 700;
+  border-radius: 25px;
+  padding: 12px;
+  background: #303f9f;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+}
+
+.loc-button:hover {
+  background: #1a237e;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-info,
+  .right-info {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+  .days-list li {
+    width: 45%;
+  }
+
+  .today-weather .bx {
+    font-size: 3rem;
+  }
+
+  .weather-temp {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .days-list li {
+    width: 100%;
+  }
+
+  .today-weather .bx {
+    font-size: 2.5rem;
+  }
+
+  .weather-temp {
+    font-size: 2rem;
+  }
+}
